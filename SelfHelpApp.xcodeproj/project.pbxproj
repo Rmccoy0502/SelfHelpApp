@@ -14,6 +14,11 @@
 		A5928BF92AFDCAFE00A462A9 /* SelfHelpAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5928BF82AFDCAFE00A462A9 /* SelfHelpAppTests.swift */; };
 		A5928C032AFDCAFE00A462A9 /* SelfHelpAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5928C022AFDCAFE00A462A9 /* SelfHelpAppUITests.swift */; };
 		A5928C052AFDCAFE00A462A9 /* SelfHelpAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5928C042AFDCAFE00A462A9 /* SelfHelpAppUITestsLaunchTests.swift */; };
+		A5928C122AFDCB9500A462A9 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5928C112AFDCB9500A462A9 /* EmailView.swift */; };
+		A5928C142AFDCBEE00A462A9 /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5928C132AFDCBEE00A462A9 /* MoodView.swift */; };
+		A5928C162AFDCC7200A462A9 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5928C152AFDCC7200A462A9 /* RegistrationView.swift */; };
+		A5928C182AFDCCD700A462A9 /* EmergencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5928C172AFDCCD700A462A9 /* EmergencyView.swift */; };
+		A5928C1A2AFDCD0400A462A9 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5928C192AFDCD0400A462A9 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		A5928BFE2AFDCAFE00A462A9 /* SelfHelpAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfHelpAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5928C022AFDCAFE00A462A9 /* SelfHelpAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHelpAppUITests.swift; sourceTree = "<group>"; };
 		A5928C042AFDCAFE00A462A9 /* SelfHelpAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHelpAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A5928C112AFDCB9500A462A9 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		A5928C132AFDCBEE00A462A9 /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
+		A5928C152AFDCC7200A462A9 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		A5928C172AFDCCD700A462A9 /* EmergencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyView.swift; sourceTree = "<group>"; };
+		A5928C192AFDCD0400A462A9 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,9 @@
 		A5928BDB2AFDCAFE00A462A9 = {
 			isa = PBXGroup;
 			children = (
+				A5928C192AFDCD0400A462A9 /* WelcomeView.swift */,
+				A5928C172AFDCCD700A462A9 /* EmergencyView.swift */,
+				A5928C152AFDCC7200A462A9 /* RegistrationView.swift */,
 				A5928BE62AFDCAFE00A462A9 /* SelfHelpApp */,
 				A5928BF72AFDCAFE00A462A9 /* SelfHelpAppTests */,
 				A5928C012AFDCAFE00A462A9 /* SelfHelpAppUITests */,
@@ -98,6 +111,8 @@
 				A5928BE92AFDCAFE00A462A9 /* ContentView.swift */,
 				A5928BEB2AFDCAFE00A462A9 /* Assets.xcassets */,
 				A5928BED2AFDCAFE00A462A9 /* Preview Content */,
+				A5928C112AFDCB9500A462A9 /* EmailView.swift */,
+				A5928C132AFDCBEE00A462A9 /* MoodView.swift */,
 			);
 			path = SelfHelpApp;
 			sourceTree = "<group>";
@@ -259,6 +274,11 @@
 			files = (
 				A5928BEA2AFDCAFE00A462A9 /* ContentView.swift in Sources */,
 				A5928BE82AFDCAFE00A462A9 /* SelfHelpAppApp.swift in Sources */,
+				A5928C182AFDCCD700A462A9 /* EmergencyView.swift in Sources */,
+				A5928C122AFDCB9500A462A9 /* EmailView.swift in Sources */,
+				A5928C142AFDCBEE00A462A9 /* MoodView.swift in Sources */,
+				A5928C162AFDCC7200A462A9 /* RegistrationView.swift in Sources */,
+				A5928C1A2AFDCD0400A462A9 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
