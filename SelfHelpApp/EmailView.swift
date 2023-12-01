@@ -1,12 +1,32 @@
 import SwiftUI
+import MessageUI
 
 struct EmailView: View {
+    //@Binding var journalEntry: MoodView.JournalEntry
+    @State private var isShowingMailView = false
+    @State var email:String = "example@none.com"
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            if isShowingMailView {
+                Text("Email Sent!!!!")
+            } else {
+            HStack{
+                Text("Healthcare Prider Email: ")
+            TextField("Healthcare Prider Email: ", text: $email)
+            }
+            Button(action: {
+                self.isShowingMailView.toggle()
+            }) {
+                Image(systemName: "envelope")
+                    .imageScale(.large)
+                    .foregroundColor(.accentColor)
+                Text("Send Email")
+            }
+            }
+
         }
     }
 }
+
+

@@ -1,44 +1,61 @@
 import SwiftUI
-    struct MoodView: View {
-        @State var userName:String;
-        @State var selectedMood:Class;
-        
-        enum Class:String, CaseIterable, Identifiable{
-            case happy;
-            case overjoyed;
-            case anxious;
-            case sad;
-            case exhausted;
-            case stressed;
-            case overwhelmed;
-            case unsure;
-            
-            var id:Self {self}
-        }
-        
-        init() {
-            userName = "";
-            selectedMood = Class.happy
-        }
-    
+
+struct MoodView: View {
+    @State private var journalEntry = JournalEntry(userName: "", selectedMood: .happy, optionalJournalEntry: "")
+
+    enum MoodClass: String, CaseIterable, Identifiable {
+        case happy, overjoyed, anxious, sad, exhausted, stressed, overwhelmed, unsure
+
+        var id: Self { self }
+    }
+
+    struct JournalEntry {
+        var userName: String
+        var selectedMood: MoodClass
+        var optionalJournalEntry: String
+    }
+
     var body: some View {
         VStack {
-            HStack{
-                Text("Choose your current mood:").font(.title2).foregroundColor(Color.init(red:0.786, green:0.460, blue:0.0));
-                Picker(selection: $selectedMood, label: Text("Mood options")) {
-                    ForEach(Class.allCases) {casename in
-                        Text(casename.rawValue.capitalized)
+            HStack {
+                Text("Choose your current mood:")
+                    .font(.title2)
+                    .foregroundColor(Color(red: 0.786, green: 0.460, blue: 0.0))
+
+                Picker(selection: $journalEntry.selectedMood, label: Text("Mood options")) {
+                    ForEach(MoodClass.allCases) { mood in
+                        Text(mood.rawValue.capitalized)
                     }
-                }.pickerStyle(.wheel).colorMultiply(Color.init(red:0.786, green:0.460, blue:0.0));
-                
+                }
+                .pickerStyle(.wheel)
+                .colorMultiply(Color(red: 0.786, green: 0.460, blue: 0.0))
             }
-            HStack{
-                Button("Save Journal Entry"){
-                    
-                }.font(.title).foregroundColor(Color.init(red:0.786, green:0.460, blue:0.0));
+
+            TextField("Enter your name", text: $journalEntry.userName)
+                .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+
+            TextEditor(text: $journalEntry.optionalJournalEntry)
+                .padding()
+                .disableAutocorrection(true)
+                .autocapitalization(.none)
+                .frame(minHeight: 100) // Set the desired height
+
+            HStack {
+                Button("Save Journal Entry") {
+                    saveJournalEntry()
+                }
+                .font(.title)
+                .foregroundColor(Color(red: 0.786, green: 0.460, blue: 0.0))
             }
-            
         }
+        .padding()
+    }
+
+    func saveJournalEntry() {
+        print("Journal Entry Saved:")
+        print("User Name: \(journalEntry.userName)")
+        print("Selected Mood: \(journalEntry.selectedMood.rawValue)")
+        print("Optional Journal Entry: \(journalEntry.optionalJournalEntry)")
     }
 }
-
