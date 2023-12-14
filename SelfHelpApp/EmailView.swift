@@ -2,7 +2,7 @@ import SwiftUI
 import MessageUI
 
 struct EmailView: View {
-    //@Binding var journalEntry: MoodView.JournalEntry
+    
     @State private var isShowingMailView = false
     @State var email:String = "example@none.com"
 

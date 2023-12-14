@@ -1,42 +1,70 @@
 import SwiftUI
 
 struct RegistrationView: View {
-    @State var userName:String;
-    @State var selectedMood:Class;
-    
-    enum Class:String, CaseIterable, Identifiable{
-        case happy;
-        case overjoyed;
-        case anxious;
-        case sad;
-        case exhausted;
-        case stressed;
-        case overwhelmed;
-        case unsure;
-        
-        var id:Self {self}
-    }
-    
-    init() {
-        userName = "";
-        selectedMood = Class.happy
-    }
-    
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
+    @State private var email: String = ""
+    @State private var registrationComplete: Bool = false
+
     var body: some View {
-        VStack {
-            HStack{
-                Text("What is your first name? : ").font(.title2).foregroundColor(Color.init(red:0.786, green:0.460, blue:0.0));
-                TextField("Enter First name", text:$userName);
+        NavigationView {
+            VStack {
+                TextField("First Name", text: $firstName)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+
+                TextField("Last Name", text: $lastName)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+
+                TextField("Email", text: $email)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+
+                NavigationLink(destination: RegistrationConfirmationView(firstName: firstName, lastName: lastName, email: email), isActive: $registrationComplete) {
+                    Button("Submit") {
+                        
+                        print("First Name: \(firstName)")
+                        print("Last Name: \(lastName)")
+                        print("Email: \(email)")
+
+                        
+                        registrationComplete = true
+                    }
+                    .padding()
+                    .foregroundColor(Color.white)
+                    .background(Color(red: 0.786, green: 0.460, blue: 0.0))
+                    .cornerRadius(8)
                 }
-            HStack{
-                Text("What is your last name? : ").font(.title2).foregroundColor(Color.init(red:0.786, green:0.460, blue:0.0));                 TextField("Enter last name", text:$userName);
             }
-            HStack{
-                Text("What is your email address?: ").font(.title2).foregroundColor(Color.init(red:0.786, green:0.460, blue:0.0));                 TextField("Enter Email Address. ex: @gmail, @yahoo, @icloud, etc.", text:$userName);
-            }
+            .padding()
+            .navigationBarTitle("Registration")
         }
     }
-    
 }
-            
 
+struct RegistrationConfirmationView: View {
+    var firstName: String
+    var lastName: String
+    var email: String
+
+    var body: some View {
+        VStack {
+            Text("Registration Complete")
+                .font(.title)
+                .padding()
+                .foregroundColor(Color(red: 0.786, green: 0.460, blue: 0.0))
+
+            Text("First Name: \(firstName)")
+                .foregroundColor(Color(red: 0.786, green: 0.460, blue: 0.0))
+            Text("Last Name: \(lastName)")
+                .foregroundColor(Color(red: 0.786, green: 0.460, blue: 0.0))
+            Text("Email: \(email)")
+                .foregroundColor(Color(red: 0.786, green: 0.460, blue: 0.0))
+        }
+        .navigationBarTitle("Confirmation")
+    }
+}

@@ -11,7 +11,7 @@ import SwiftUI
 struct SelfHelpAppApp: App {
     var body: some Scene {
         WindowGroup {
-            EmailView()
+            EmergencyView()
         }
     }
 }
